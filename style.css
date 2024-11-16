@@ -41,15 +41,17 @@ body {
   height: 100%;
   width: 100%;
   position: relative;
-  z-index: 2;
-  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
 }
 #page1-content nav {
   color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: burlywood;
   padding: 3vw 2vw;
   width: 100%;
   font-family: "CustomFont1", sans-serif;
@@ -60,4 +62,43 @@ body {
 }
 #page1-content nav h2 {
   font-size: 1.4vw;
+  font-weight: 100;
+}
+
+#page1-content h1 {
+  color: #fff;
+  font-size: 24vw;
+  font-weight: 100;
+  font-family: "RejouiceFont", sans-serif;
+  line-height: 27vw;
+}
+
+#page1-content h1 span {
+  font-family: "RejouiceFont", sans-serif;
+}
+
+#gola {
+  background-color: rgba(78, 78, 78, 0.5);
+  color: #fff;
+  border-radius: 50%;
+  height: 8vw;
+  width: 8vw;
+  position: fixed;
+  z-index: 9;
+  font-family: "CustomFont1", sans-serif;
+  transform: translate(-90%, -90%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.2vw 1.2vw;
+}
+
+#gola h2 {
+  font-size: 1.3vw;
+}
+
+#page2 {
+  height: 100vh;
+  width: 100%;
+  background-color: beige;
 }
