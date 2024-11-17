@@ -1,3 +1,7 @@
+document.addEventListener("DOMContentLoaded", () => {
+  gsap.registerPlugin(scrollTrigger);
+});
+
 const page1Content = document.getElementById("page1-content");
 
 const gola = document.getElementById("gola");
@@ -15,7 +19,7 @@ const page2Animation = () => {
       start: "top 80%",
       end: "bottom 20%",
       scrub: true,
-      markers: true,
+      markers: false,
     },
   });
 
@@ -29,6 +33,7 @@ const page2Animation = () => {
     });
   });
 };
+
 page2Animation();
 const cursorEffect = () => {
   page1Content.addEventListener("mouseenter", () => {
