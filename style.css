@@ -19,6 +19,7 @@ html,
 body {
   height: 100%;
   width: 100%;
+  user-select: none;
 }
 #main {
   height: 100%;
@@ -98,7 +99,76 @@ body {
 }
 
 #page2 {
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
-  background-color: beige;
+  /* background-color: #faf8f3; */
+  z-index: 11;
+  font-family: "CustomFont1", sans-serif;
+}
+
+.elem1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 15px;
+  height: 20vh;
+}
+#page2-start {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.2vw 2vw;
+  margin: 0 2vw;
+  border-bottom: 2px solid #bbbab6;
+  font-weight: 500;
+  font-size: 1.8vw;
+}
+
+.elem2 {
+  width: 93%;
+  margin: 0 5vw;
+  line-height: 6vh;
+  line-height: 1.07;
+}
+/* .elem2 span {
+  font-family: "CustomFont1", sans-serif;
+  font-weight: 500;
+  font-size: 4vw;
+  text-align: start;
+  padding: 0 3vw;
+} */
+
+.elem2 h1 {
+  font-family: "CustomFont1", sans-serif;
+  font-weight: 500;
+  opacity: 0;
+  font-size: 4vw;
+  transform: translateY(100px);
+  /* text-align: start; */
+  padding: 0 3vw;
+}
+
+.elem3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40vh;
+  width: 100%;
+  min-height: 40vh;
+  flex-direction: column;
+  text-align: center;
+  font-family: "CustomFont1", sans-serif;
+}
+
+.elem3-part1 {
+  padding: 1.1vw 2vw;
+}
+.elem3-part2 {
+  margin-top: 3vh;
+}
+
+.elem3-part2 span {
+  font-size: 4vw;
+  text-decoration: underline;
 }
