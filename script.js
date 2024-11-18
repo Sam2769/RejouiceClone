@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  gsap.registerPlugin(scrollTrigger);
+  gsap.registerPlugin(ScrollTrigger);
 });
 
 const page1Content = document.getElementById("page1-content");
@@ -27,14 +27,40 @@ const page2Animation = () => {
     t1.from(heading, {
       y: 100,
       opacity: 0,
-      duration: 1,
-      ease: "power3.out",
-      stagger: 0.2,
+      duration: 1.5,
+      ease: "power3.inOut",
+      stagger: 0.5,
     });
   });
 };
 
 page2Animation();
+const elem3Text = Array.from(document.querySelectorAll(".elem3-part2 h1"));
+const page2Animation2 = () => {
+  const t2 = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".elem3-part1",
+      start: "top 80%",
+      end: "bottom 60%",
+      markers: false,
+      scrub: 2,
+    },
+  });
+
+  elem3Text.forEach((heading, index) => {
+    t2.from(heading, {
+      y: 150,
+      duration: 10,
+      delay: 2,
+      opacity: 0,
+      ease: "power3.inOut",
+      stagger: 2,
+    });
+  });
+};
+
+page2Animation2();
+
 const cursorEffect = () => {
   page1Content.addEventListener("mouseenter", () => {
     gsap.to(gola, {
