@@ -22,7 +22,7 @@ const page2Animation = () => {
       duration: 3,
       // ease: "power3.inOut",
       ease: "back",
-      stagger: 0.5,
+      stagger: 1.2,
     });
   });
 };
@@ -30,7 +30,6 @@ const page2Animation = () => {
 page2Animation();
 
 const elem3Text = Array.from(document.querySelectorAll(".elem3-part2 h1"));
-console.log(elem3Text);
 const page2BottomAnimation = () => {
   const t2 = gsap.timeline({
     scrollTrigger: {
@@ -39,7 +38,7 @@ const page2BottomAnimation = () => {
       start: "top 75%",
       end: "top 35%",
       markers: false,
-      scrub: 5,
+      scrub: 3,
     },
   });
 
@@ -88,6 +87,93 @@ const cursorEffect = () => {
 };
 
 cursorEffect();
+
+const line = document.querySelector(".line");
+const quoteArr = [];
+const page3EndText = document.querySelector("#page3-end span");
+const createquoteArr = () => {
+  const quoteList = document.querySelectorAll("#quote span");
+  quoteArr.push(quoteList[0]);
+  quoteArr.push(quoteList[1]);
+};
+
+createquoteArr();
+
+const page3EndAnimation = () => {
+  const t = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".gap",
+      scroller: "body",
+      start: "top 40%",
+      end: "top 45%",
+      markers: false,
+      scrub: 2,
+    },
+  });
+
+  t.fromTo(
+    page3EndText,
+    {
+      y: 200,
+      opacity: 0,
+    },
+    {
+      y: 0,
+      opacity: 1,
+      duration: 1,
+      delay: 0.2,
+      ease: "power3.out",
+    }
+  );
+};
+
+page3EndAnimation();
+
+const quoteAnimation = () => {
+  const timeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".gap",
+      scroller: "body",
+      start: "top 75%",
+      end: "bottom 80%",
+      markers: false,
+      scrub: 2,
+    },
+  });
+
+  quoteArr.forEach((elem, i) => {
+    timeline.fromTo(
+      elem,
+      {
+        y: 100,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 6,
+        delay: 0.2,
+      }
+    );
+  });
+
+  gsap.to(line, {
+    width: "100%",
+    duration: 2,
+    ease: "power3.out",
+    delay: 5,
+    scrollTrigger: {
+      trigger: ".gap",
+      scroller: "body",
+      start: "top 60%",
+      end: "bottom 80%",
+      markers: false,
+      scrub: 2,
+    },
+  });
+};
+
+quoteAnimation();
 
 /************* Lennis CODE */
 /************************************************************** */
