@@ -2,7 +2,42 @@ const page1Content = document.getElementById("page1-content");
 
 const gola = document.getElementById("gola");
 
+// PAGE 2 ELEMENTS SELECTION ******************************
 const elem2Headings = Array.from(document.querySelectorAll(".elem2 h1"));
+const line2 = document.querySelector(".line2");
+const line2Replacement = document.querySelector(".line2-replacement");
+const line3 = document.querySelector(".line3");
+const line3Replacement = document.querySelector(".line3-replacement");
+const serviceContainer = document.querySelector("#services");
+
+serviceContainer.addEventListener("mouseover", () => {
+  console.log("mouse entered service container");
+
+  const timeline2 = gsap.timeline();
+  const timeline3 = gsap.timeline();
+
+  timeline2.to(line2, {
+    x: 400,
+    duration: 0.1,
+  });
+
+  timeline2.to(line2Replacement, {
+    duration: 0.2,
+    delay: 0,
+    x: 370,
+  });
+
+  timeline3.to(line3, {
+    x: 410,
+    duration: 0.1,
+  });
+
+  timeline3.to(line3Replacement, {
+    duration: 0.2,
+    x: 410,
+  });
+});
+// **************************************************
 const page2Animation = () => {
   const t1 = gsap.timeline({
     scrollTrigger: {
